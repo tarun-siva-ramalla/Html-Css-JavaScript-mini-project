@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Range</title>
+    <style>
+        .range {
+            width: 500px;
+            background: linear-gradient(to right, #7479779e 20%, rgb(129, 246, 170) 40%, rgb(142, 247, 142) 50%, rgb(95, 229, 65) 80%);
+            color: white;
+            display: flex;
+            justify-content: left;
+            align-items: left;
+            padding: px;
+            margin: auto;
+            border-radius: 2px;
+            text-indent: 10px;
+        }
+
+        #card {
+            background-color: rgb(224, 218, 218);
+            width: 500px;
+            height: 70px;
+            margin: auto;
+        }
+
+        .form-range {
+            width: 400px;
+            margin-top: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="range">
+        <h2 id="amount">Select an Amount</h2>
+    </div>
+    <div id="card">
+        <input type="range" class="form-range" min="0" max="5" id="customRange2">
+        <span id="range">5</span>
+    </div>
+    <script>
+        let range = document.querySelector("#customRange2");
+        let amount = document.querySelector("#amount");
+        let rangeValue = document.querySelector("#range");
+
+        range.addEventListener("input", function () {
+            let selectAmount = range.value;
+            rangeValue.innerText = selectAmount;
+        });
+    </script>
+</body>
+
+</html>
