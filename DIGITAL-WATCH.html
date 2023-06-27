@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>DIGITAL_WATCH</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        .digital {
+            text-align: center;
+            color: greenyellow;
+            background: linear-gradient(to right, rgba(240, 52, 240, 0.198) 20%, rgb(210, 137, 210) 40%,
+                    rgb(219, 87, 219) 60%, rgba(245, 10, 245, 0.92) 80%);
+            padding: 10px;
+        }
+        .digital1 {
+            text-align: center;
+            color: greenyellow;
+            background: linear-gradient(to right, rgba(240, 52, 240, 0.198) 20%, rgb(210, 137, 210) 40%,
+                    rgb(219, 87, 219) 60%, rgba(245, 10, 245, 0.92) 80%);
+            padding: px;
+            margin-top: 7%;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10%;
+        }
+
+        .card {
+            background: linear-gradient(to right, rgb(0, 128, 0) 30%, rgb(4, 39, 4) 60%, rgb(21, 222, 21) 90%);
+            padding: 20px;
+            width: 250px;
+            height: 200px;
+            border-radius: 10px;
+            margin-left: 10px;
+        
+        }
+       
+        .card1 {
+            background: linear-gradient(to right, rgba(0, 11, 15, 0.896) 30%, rgb(13, 38, 47) 60%, rgb(10, 175, 240) 90%);
+            padding: 20px;
+            width: 250px;
+            height: 200px;
+            border-radius: 10px;
+            margin-left: 10px;
+        }
+
+        .card2 {
+            background: linear-gradient(to right, rgba(55, 11, 11, 0.909) 30%, rgba(51, 8, 8, 0.86) 60%, rgba(228, 24, 24, 0.918) 90%);
+            padding: 20px;
+            width: 250px;
+            height: 200px;
+            border-radius: 10px;
+            margin-left: 10px;
+        }
+
+        .card-body {
+            color: white;
+            text-align: center;
+            font-size: 20px;
+        }
+        h4{
+            font-size: 30px;
+            margin-top: -5px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="digital">
+        <h2>Digital Watch</h2>
+    </div>
+    <div class="card-container">
+        <div class="card">
+            <div class="card-body">
+                <h5>Asia/Kolkata</h5>
+                <h4>India</h4>
+                <p id="indian-date">03/06/2023</p>
+                <h4 id="indian-time">10:00:00 PM</h4>
+            </div>
+        </div>
+        <div class="card1">
+            <div class="card-body">
+                <h5>Asia/Tokyo</h5>
+                <h4>Japan</h4>
+                <p id="japan-date">03/06/2023</p>
+                <h4 id="japan-time">11:00:00 PM</h4>
+            </div>
+        </div>
+        <div class="card2">
+            <div class="card-body">
+                <h5>America/New_York</h5>
+                <h4>USA</h4>
+                <p id="usa-date">03/06/2023</p>
+                <h4 id="usa-time">01:00:00 PM</h4>
+            </div>
+        </div>
+        
+    </div>
+    </div>
+    <div class="digital1">
+        <h2>Copyright &copy;2018 , Digital watches</h2>
+        <p align="center">All Rights Reserverd</p>
+        <p align='center'> Developed & Maintained by Tarun Siva</p>
+    </div>
+    <script>
+        let indianWatch = () => {
+            let options = { timeZone: "Asia/Kolkata" };
+            let currentDate = new Date().toLocaleDateString("en-US", options);
+            let currentTime = new Date().toLocaleTimeString("en-US", options);
+            document.querySelector("#indian-date").innerText = currentDate;
+            document.querySelector("#indian-time").innerText = currentTime;
+        };
+
+        setInterval(indianWatch, 1000);
+        let usaWatch = () => {
+            let options = { timeZone: "America/New_York" };
+            let currentDate = new Date().toLocaleDateString("en-US", options);
+            let currentTime = new Date().toLocaleTimeString("en-US", options);
+            document.querySelector("#usa-date").innerText = currentDate;
+            document.querySelector("#usa-time").innerText = currentTime;
+        };
+
+        setInterval(usaWatch, 1000);
+        let japanWatch = () => {
+            let options = { timeZone: "Asia/Tokyo" };
+            let currentDate = new Date().toLocaleDateString("en-US", options);
+            let currentTime = new Date().toLocaleTimeString("en-US", options);
+            document.querySelector("#japan-date").innerText = currentDate;
+            document.querySelector("#japan-time").innerText = currentTime;
+        };
+
+        setInterval(japanWatch, 1000);
+    </script>
+</body>
+
+</html>
