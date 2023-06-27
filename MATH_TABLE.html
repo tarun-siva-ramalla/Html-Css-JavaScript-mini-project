@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MATH TABLE</title>
+    <style>
+        .multiplication {
+            background: linear-gradient(to right, rgba(37, 10, 64, 0.675) 20%, rgb(42, 20, 101) 40%, rgb(237, 100, 51) 60%, rgb(221, 75, 22));
+            width: 800px;
+            margin: auto;
+            padding: 1px;
+            text-indent: 10px;
+            color: white;
+        }
+
+        .card {
+            border: 1px solid grey;
+            width: 778px;
+            height: 60px;
+            margin: auto;
+            padding: 10px;
+            text-indent: 10px;
+            color: black;
+        }
+
+        input[type="number"] {
+            width: 200px;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+
+        .range {
+            margin-top: -37px;
+            margin-left: 28%;
+        }
+
+        input[type="range"] {
+            margin-left: 10px;
+            width: 550px;
+        }
+
+        .card1 {
+            background: linear-gradient(to right, rgba(72, 48, 72, 0.378) 20%, purple 80%);
+            border: 1px solid grey;
+            width: 778px;
+            height: 60px;
+            margin: auto;
+            padding: 10px;
+            text-indent: 10px;
+            color: white;
+            font-size: 50px;
+        }
+
+        .num {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="multiplication">
+        <h2>Multiplication Table</h2>
+    </div>
+    <div class='card'>
+        <label>Enter a Number:</label><br>
+        <input type="number" id="numberInput" placeholder="Your Number">
+        <div class="range">
+            <label for="customRange1" class="form-label">Select the Multiplier:</label><br>
+            <input type="range" class="form-range" id="customRange1" min="1" max="10">
+        </div>
+    </div>
+    <div class="card1">
+        <div id="multiplicationTable"></div>
+        <!-- <span class="num">20</span>
+        <span class="num">X</span>
+        <span class="num">1</span>
+        <span class="num">=</span>
+        <span class="num">20</span> -->
+    </div>
+    <div id="multiplicationTable"></div>
+
+    <script>
+        let numberInput = document.querySelector("#numberInput");
+        numberInput.addEventListener("input", function () {
+            calculate();
+        });
+
+        let range = document.querySelector("#customRange1");
+        range.addEventListener("input", function () {
+            calculate();
+        });
+
+        let calculate = () => {
+            let theNumber = Number(numberInput.value);
+            let multiplier = Number(range.value);
+            let mathResult = theNumber * multiplier;
+            document.querySelector("#multiplicationTable").innerText = `${theNumber} X ${multiplier} = ${mathResult}`;
+        }
+    </script>
+</body>
+
+</html>
