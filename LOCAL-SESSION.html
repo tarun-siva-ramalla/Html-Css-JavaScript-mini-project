@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>LOCAL &SESSION</title>
+        <style></style>
+    </head>
+    <body>
+        <script>
+            let empName="Tarun"
+            //set
+            localStorage.setItem("name",empName);
+            //get
+            console.log(localStorage.getItem("name"));
+            //removeItems
+            localStorage.removeItem("name");
+            //clear
+            localStorage.clear("name");
+            //local storage with an array
+            let colors = ['white','black'];
+            localStorage.setItem("colors",colors);
+            //other way
+            let color=[{id:1,name:"black"},
+            {id:2,name:"black"},
+            {id:3,name:"black"}
+        ]
+        localStorage.setItem("color",JSON.stringify(color));
+        let theColor=JSON.parse(localStorage.getItem("color"));
+        console.log(theColor);
+        console.log(localStorage.getItem("colors"));
+        localStorage.removeItem("colors");
+        
+
+
+        //session storage
+        let studentName = "Tarun";
+        //set
+        sessionStorage.setItem("studentName");
+        //get
+        console.log(sessionStorage.getItem("studentName"));
+
+        </script>
+    </body>
+</html>
